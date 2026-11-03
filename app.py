@@ -1,10 +1,17 @@
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Timo Week 2</h1>"
+
+    visits = 1
+
+    return render_template(
+        "index.html",
+        visits=visits
+    )
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
