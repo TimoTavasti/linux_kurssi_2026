@@ -1,0 +1,40 @@
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    color: #38bdf8;
+    font-size: 3rem;
+}
+
+h2 {
+    color: #7dd3fc;
+    margin-top: 30px;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.info-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.counter {
+    font-size: 3rem;
+    color: #38bdf8;
+    font-weight: bold;
+}

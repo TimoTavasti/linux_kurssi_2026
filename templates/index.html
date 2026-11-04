@@ -4,24 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
     <title>Timo's Homelab</title>
 </head>
 
 <body>
 
-    <h1>🚀 Timo's Homelab</h1>
+<h1>🚀 Timo's Homelab</h1>
 
+<div class="info-box">
     <h2>Linux Administration 2026</h2>
 
     <p>
         Tämä sivu toimii Flaskilla Nginxin takana.
     </p>
+</div>
+
+<div class="info-box">
 
     <h2>Kävijälaskuri</h2>
 
-    <p>
-        Sivun latauksia: {{ visits }}
-    </p>
+    <div class="counter">
+        {{ visits }}
+    </div>
+
+</div>
+
+<div class="info-box">
+
+    <h2>Palvelinympäristö</h2>
+
+    <p>Ubuntu Server 26.04</p>
+    <p>Nginx</p>
+    <p>Flask</p>
+    <p>MariaDB</p>
+    <p>GitHub</p>
+
+</div>
+
+<div class="info-box">
 
     <h2>Tietokanta</h2>
 
@@ -29,23 +53,34 @@
         Kävijälaskuri tallennetaan MariaDB-tietokantaan.
     </p>
 
+</div>
+
+<div class="info-box">
+
     <h2>Uudelleenkäynnistystesti</h2>
 
     <p>
         Testiä ei ole vielä tehty.
     </p>
 
-    <p>
-        <a href="https://github.com/TimoTavasti/linux_kurssi_2026">
-            Projektin lähdekoodi GitHubissa
-        </a>
-    </p>
+</div>
 
-    <p>
-        <a href="/">
-            Viikon 1 etusivulle
-        </a>
-    </p>
+<div class="info-box">
+
+    <a href="https://github.com/TimoTavasti/linux_kurssi_2026">
+        Projektin lähdekoodi GitHubissa
+    </a>
+
+</div>
+
+<div class="info-box">
+
+    <a href="/">
+        Viikon 1 etusivulle
+    </a>
+
+</div>
 
 </body>
+
 </html>
