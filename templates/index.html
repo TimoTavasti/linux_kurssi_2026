@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+          href="/viikko2/static/style.css">
 
     <title>Timo's Homelab</title>
 </head>
@@ -37,12 +37,13 @@
 
     <h2>Palvelinympäristö</h2>
 
-    <p>Ubuntu Server 26.04</p>
-    <p>Nginx</p>
-    <p>Flask</p>
-    <p>MariaDB</p>
-    <p>GitHub</p>
-
+<div class="server-stack">
+    <div class="server-item">Ubuntu 26.04</div>
+    <div class="server-item">Nginx</div>
+    <div class="server-item">Flask</div>
+    <div class="server-item">MariaDB</div>
+    <div class="server-item">GitHub</div>
+</div>
 </div>
 
 <div class="info-box">
@@ -61,7 +62,8 @@
     <h2>Uudelleenkäynnistystesti</h2>
 
     <p>
-        Testiä ei ole vielä tehty.
+        Palvelin käynnistettiin uudelleen onnistuneesti.
+	MariaDB käynnistyi automaattisesti ja kävijälaskurin arvo säilyi tietokannassa.
     </p>
 
 </div>
@@ -69,7 +71,7 @@
 <div class="info-box">
 
     <a href="https://github.com/TimoTavasti/linux_kurssi_2026">
-        Palvelin käynnistettiin uudelleen ja kävijälaskurin arvo säilyi tietokannassa. MariaDB käynnistyi automaattisesti uudelleenkäynnistyksen jälkeen.
+        GitHub osoite tehtävälle.
     </a>
 
 </div>
