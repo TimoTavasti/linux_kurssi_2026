@@ -31,14 +31,6 @@ cat > "$OUTPUT_FILE" << EOF
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1>Week 3 Server Status Report</h1>
-
-<p>
-This page was created for Week 3 of the Linux course.
-The server status information is generated automatically by a Bash script
-and updated every minute using cron.
-</p>
-
 <style>
 :root {
     --bg: #0f172a;
@@ -133,6 +125,15 @@ li {
 <body>
 
 <section>
+
+<h1>Week 3 Server Status Report</h1>
+
+<p>
+This page was created for Week 3 of the Linux course.
+The server status information is generated automatically by a Bash script
+and updated every minute using cron.
+</p>
+
 
 <h1>Server Status Report</h1>
 
@@ -234,6 +235,26 @@ Cron executes the following command:
 <section>
 <h2>Test Results</h2>
 
+<h3>Syntax Check</h3>
+
+<p>
+The script was checked using:
+
+<code>bash -n report.sh</code>
+
+No syntax errors were reported.
+</p>
+
+<h3>Manual Execution Test</h3>
+
+<p>
+The script was executed manually using:
+
+<code>sudo ./report.sh</code>
+
+The report was generated successfully and displayed in a browser.
+</p>
+
 <table>
 
 <tr>
@@ -262,6 +283,25 @@ Cron executes the following command:
 
 </table>
 
+<section>
+
+<h2>Reboot Test</h2>
+
+<p>
+The virtual machine was rebooted successfully.
+
+After the reboot:
+
+<ul>
+<li>The Week 2 application remained accessible.</li>
+<li>The Week 3 report page opened successfully.</li>
+<li>The cron schedule continued to generate updates automatically.</li>
+</ul>
+
+</p>
+
+</section>
+
 <p>
 Automatic update test:
 The report generation time changed automatically from
@@ -283,6 +323,7 @@ allowing all weekly assignments to use the same repository structure.
 </section>
 
 <section>
+
 <h2>GitHub Repository</h2>
 
 <p style="text-align:center;">
@@ -296,7 +337,9 @@ allowing all weekly assignments to use the same repository structure.
    border-radius:10px;
    text-decoration:none;
    font-weight:bold;">
+
    View Source Code on GitHub
+
 </a>
 
 </p>
