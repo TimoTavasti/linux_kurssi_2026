@@ -31,22 +31,56 @@ cat > "$OUTPUT_FILE" << EOF
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Week 3 Server Status Report</title>
+<h1>Week 3 Server Status Report</h1>
+
+<p>
+This page was created for Week 3 of the Linux course.
+The server status information is generated automatically by a Bash script
+and updated every minute using cron.
+</p>
 
 <style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #38bdf8;
+    --text: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
-    margin: 40px auto;
-    background: #f5f7fa;
-    padding: 20px;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    color: var(--text);
+    font-family: Segoe UI, Arial, sans-serif;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    color: var(--accent);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(56,189,248,0.5);
+}
+
+h2 {
+    color: var(--accent);
+    margin-bottom: 15px;
 }
 
 section {
-    background: white;
+    background: var(--card);
     padding: 20px;
-    border-radius: 10px;
     margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(56,189,248,0.15);
 }
 
 table {
@@ -54,13 +88,43 @@ table {
     border-collapse: collapse;
 }
 
+th {
+    background: #0f172a;
+    color: var(--accent);
+}
+
 th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #334155;
     padding: 10px;
 }
 
-th {
-    background: #e8f0fe;
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: white;
+}
+
+code {
+    background: #0f172a;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+ul {
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 8px;
 }
 </style>
 
@@ -96,7 +160,9 @@ th {
 
 <tr>
 <td>Disk space status</td>
-<td>$DISK_STATUS</td>
+<td style="font-weight:bold;color:#38bdf8;">
+$DISK_STATUS
+</td>
 </tr>
 
 <tr>
@@ -121,7 +187,7 @@ th {
 
 <li><strong>uptime -p</strong> - Displays how long the server has been running.</li>
 
-<li><strong>df -P / | awk 'NR==2 {print $5}'</strong> - Uses a pipe to extract the root filesystem usage percentage.</li>
+<li><strong>df -P / | awk</strong> - Uses a pipe to extract the root filesystem usage percentage.</li>
 
 <li><strong>free -m</strong> - Displays memory information in MiB.</li>
 </ul>
@@ -219,10 +285,20 @@ allowing all weekly assignments to use the same repository structure.
 <section>
 <h2>GitHub Repository</h2>
 
-<p>
-<a href="https://github.com/TimoTavasti/linux_kurssi_2026/tree/main/viikko_3">
-View the source code on GitHub
+<p style="text-align:center;">
+
+<a href="https://github.com/TimoTavasti/linux_kurssi_2026/tree/main/viikko_3"
+   style="
+   display:inline-block;
+   padding:12px 20px;
+   background:#38bdf8;
+   color:#0f172a;
+   border-radius:10px;
+   text-decoration:none;
+   font-weight:bold;">
+   View Source Code on GitHub
 </a>
+
 </p>
 
 </section>

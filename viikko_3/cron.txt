@@ -1,0 +1,3 @@
+# Week 3 cron configuration
+
+* * * * * sudo /home/ubuntu/linux_kurssi_2026/viikko_3/report.sh
