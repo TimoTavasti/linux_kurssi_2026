@@ -24,6 +24,12 @@ disk_status() {
 
 DISK_STATUS=$(disk_status)
 
+if [ "$DISK_STATUS" = "WARNING" ]; then
+    DISK_STATUS_COLOR="#ef4444"
+else
+    DISK_STATUS_COLOR="#22c55e"
+fi
+
 cat > "$OUTPUT_FILE" << EOF
 <!DOCTYPE html>
 <html lang="en">
@@ -126,16 +132,13 @@ li {
 
 <section>
 
-<h1>Week 3 Server Status Report</h1>
+<h1>Week 3 - Server Status Report</h1>
 
 <p>
 This page was created for Week 3 of the Linux course.
 The server status information is generated automatically by a Bash script
 and updated every minute using cron.
 </p>
-
-
-<h1>Server Status Report</h1>
 
 <table>
 
@@ -161,7 +164,7 @@ and updated every minute using cron.
 
 <tr>
 <td>Disk space status</td>
-<td style="font-weight:bold;color:#38bdf8;">
+<td style="font-weight:bold;color:$DISK_STATUS_COLOR;">
 $DISK_STATUS
 </td>
 </tr>
