@@ -20,6 +20,78 @@ This page uses the replicated database on Server B.
 Loading this page does not increase the visitor counter.
 </p>
 
+<div class="info-box">
+
+<h2>Week 4 Documentation</h2>
+
+<h3>Submitted URLs</h3>
+
+<p>
+Server A:
+http://195.148.22.121/viikko2/
+</p>
+
+<p>
+Server B:
+http://128.214.252.183/viikko4/
+</p>
+
+<h3>How Server B Was Created</h3>
+
+<p>
+Server B (Nuhapumppu) was created from a snapshot of
+Server A (Tinpan_Linux) in CSC cPouta.
+A new floating IP address was assigned to Server B.
+</p>
+
+<h3>Backups</h3>
+
+<p>
+The /var/www/html directory is backed up hourly from
+Server A to Server B using rsync, SSH keys and cron.
+Backups are stored outside the public web directory
+under /srv/backups/www.
+</p>
+
+<h3>Database Replication</h3>
+
+<p>
+MariaDB replication continuously copies changes from
+Server A to Server B.
+The visitor counter shown on this page comes from
+Server B's local replicated database.
+</p>
+
+<h3>Users and Permissions</h3>
+
+<p>
+The Linux user ubuntu is used for application files.
+Backup files are owned by root and stored with restricted permissions.
+A dedicated MariaDB user named replicator is used for database replication.
+</p>
+
+<h3>Tests Performed</h3>
+
+<ul>
+<li>Both pages are publicly accessible.</li>
+<li>Loading Server A increases the counter.</li>
+<li>The updated value appears automatically on Server B.</li>
+<li>Loading Server B does not increase the counter.</li>
+<li>Two backup versions were created successfully.</li>
+<li>A test file was restored successfully.</li>
+<li>MariaDB replication status reports healthy operation.</li>
+</ul>
+
+<h3>What I Learned</h3>
+
+<p>
+I learned how to create a server snapshot, configure
+SSH-based backups with rsync, and build MariaDB replication
+between two Linux servers.
+</p>
+
+</div>
+
 <h1>🚀 Timo's Homelab</h1>
 
 <div class="info-box">
