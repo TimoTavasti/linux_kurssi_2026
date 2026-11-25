@@ -28,7 +28,7 @@ jobs:
         run: pip install -r viikko_5/requirements-dev.txt
 
       - name: Ruff (lint)
-        run: ruff check viikko_5.
+        run: ruff check viikko_5
 
       - name: Pytest
         run: pytest viikko_5
