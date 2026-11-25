@@ -22,19 +22,19 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: requirements*.txt
+          cache-dependency-path: viikko_5/requirements*.txt
 
       - name: Asenna riippuvuudet
-        run: pip install -r requirements-dev.txt
+        run: pip install -r viikko_5/requirements-dev.txt
 
       - name: Ruff (lint)
-        run: ruff check .
+        run: ruff check viikko_5.
 
       - name: Pytest
-        run: pytest
+        run: pytest viikko_5
 
       - name: Shell-skriptien syntaksitarkistus
-        run: bash -n scripts/*.sh
+        run: bash -n viikko_5/scripts/*.sh
 
   deploy:
     name: Deploy cPoutaan
@@ -75,7 +75,7 @@ jobs:
           rsync -az --delete --chmod=D755,F644 \
             --exclude '.git' --exclude '.github' --exclude '__pycache__' \
             --exclude '.pytest_cache' --exclude '.ruff_cache' --exclude 'REVISION' \
-            ./ cpouta:/opt/chatapp/app/
+            viikko_5/ cpouta:/opt/chatapp/app/
 
       - name: Aja deploy-skripti
         run: ssh cpouta "bash /opt/chatapp/app/scripts/deploy.sh ${{ github.sha }}"
