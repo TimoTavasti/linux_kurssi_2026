@@ -19,3 +19,4 @@ Rakentaa Flask-pohjainen chat-sovellus, joka:
 - nginx/ - Nginx-konfiguraatiot
 - systemd/ - palvelutiedostot
 - deploy/ - deploy-skriptit
+test deployment
